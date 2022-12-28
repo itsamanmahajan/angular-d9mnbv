@@ -29,7 +29,7 @@ export class BookComponent implements OnInit {
     //   this.bb = this.b;
     //   console.log('in timeout');
     // }, 80000);
-    console.log('outside timeout');
+    // console.log('outside timeout');
     this.b.cart = true;
     this.emitbook.emit(this.b);
     console.log(this.b);

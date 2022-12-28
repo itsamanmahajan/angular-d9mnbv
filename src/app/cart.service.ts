@@ -12,7 +12,10 @@ export class CartService {
   add(book: Book) {
     this.cart.push(book);
   }
-
+  getl() {
+    //console.log(this.cart.length);
+    return this.cart.length;
+  }
   get() {
     return this.cart;
   }
