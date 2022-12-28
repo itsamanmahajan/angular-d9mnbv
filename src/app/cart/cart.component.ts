@@ -12,7 +12,8 @@ export class CartComponent implements OnInit {
     //this.n = this.cartservice.getl();
   }
   getl() {
-    console.log(this.cartservice.getl());
+
+ this.n= this.cartservice.getl();
   }
   ngOnInit() {}
 }
