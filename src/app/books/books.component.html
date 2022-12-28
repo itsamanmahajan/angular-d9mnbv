@@ -11,7 +11,7 @@ Picture :<input type="text" name="" id="link" [(ngModel)]="link" />
   <ng-container *ngIf="!isDisabled">hide books</ng-container>
 </button>
 
-<div *ngIf="isDisabled">
+<div class="mx-4 flex-end" *ngIf="isDisabled">
   <ul>
     <ng-container *ngFor="let b of books; let i = index">
       <app-book [b]="b" (emitbook)="ff($event)"></app-book>
