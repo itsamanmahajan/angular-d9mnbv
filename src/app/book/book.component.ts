@@ -17,17 +17,18 @@ export class BookComponent implements OnInit {
   constructor() {}
   bb: Book = {} as Book;
   ngOnInit() {}
-
+a=false;
   @Input('b') b: Book = {} as Book;
   @Output() emitbook = new EventEmitter<Book>();
   addtocart(e: any) {
-    setTimeout(() => {
-      console.log('in timeout');
-      this.bb = this.b;
-      console.log('in timeout');
-    }, 80000);
+    // setTimeout(() => {
+    //   console.log('in timeout');
+    //   this.bb = this.b;
+    //   console.log('in timeout');
+    // }, 80000);
     console.log('outside timeout');
-    this.emitbook.emit(this.bb);
-    console.log(e);
+    this.b.cart = true;
+    this.emitbook.emit(this.b);
+    console.log(this.b);
   }
 }
