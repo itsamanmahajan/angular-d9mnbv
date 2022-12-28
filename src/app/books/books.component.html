@@ -1,0 +1,22 @@
+
+Book name: <input type="text" name="" id="name" [(ngModel)]="name">
+<br>
+Author name: <input type="text" name="" id="author" [(ngModel)]="author">
+<br>
+Picture :<input type="text" name="" id="link" [(ngModel)]="link">
+<br>
+<button type="submit" (click)="clicked()">click me</button>
+
+<button type="submit" (click)="onClick()">
+  <ng-container *ngIf="isDisabled">show books</ng-container>
+  <ng-container *ngIf="!isDisabled">hide books</ng-container>
+</button>
+
+<div *ngIf="isDisabled">
+  <ul>
+    <ng-container *ngFor="let b of books; let i = index">
+      <app-book [b]="b" (emitbook)='ff($event)'></app-book>
+    </ng-container>
+    <!-- <li>{{ name1 }} by {{ author2 }}</li> -->
+  </ul>
+</div>
