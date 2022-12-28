@@ -17,10 +17,13 @@ export class BookComponent implements OnInit {
   constructor() {}
   bb: Book = {} as Book;
   ngOnInit() {}
-a=false;
+  a = false;
   @Input('b') b: Book = {} as Book;
   @Output() emitbook = new EventEmitter<Book>();
   addtocart(e: any) {
+    console.log('e' + e.id);
+
+    const aa = document.getElementById('del');
     // setTimeout(() => {
     //   console.log('in timeout');
     //   this.bb = this.b;
