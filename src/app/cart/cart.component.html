@@ -1,4 +1,8 @@
 {{ getl() }} hi
-<button type="submit" (click)="getl()">length</button>
+<!-- <button type="submit" (click)="getl()">length</button> -->
 
-{{n}}
+{{ n }}
+
+<div *ngFor="let b of b">
+  <li>{{ b.name }}</li>
+</div>

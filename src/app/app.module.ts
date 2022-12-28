@@ -7,9 +7,10 @@ import { HelloComponent } from './hello.component';
 import { BooksComponent } from './books/books.component';
 import { BookComponent } from './book/book.component';
 import { CartComponent } from './cart/cart.component';
+import { ApproutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule,ApproutingModule],
   declarations: [
     AppComponent,
     HelloComponent,
