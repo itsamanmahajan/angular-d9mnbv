@@ -1,5 +1,6 @@
 import { TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 
 export interface Book {
   name: string;
@@ -17,7 +18,7 @@ export class BooksComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     console.log('destrop');
   }
-  constructor() {
+  constructor(private cartservice:CartService) {
     console.log('in c');
     console.log(this.isshowbooks, this.isDisabled, this.books, false);
   }
@@ -31,15 +32,9 @@ export class BooksComponent implements OnInit, OnDestroy {
     this.isDisabled = !this.isDisabled;
   }
   ff(e: Book) {
-    this.c.name = e.name;
-    this.c.author = e.author;
-    this.c.link = e.link;
-    this.c.cart = true;
-    this.cart.push(this.c);
-    // this.cart.push(e);
-    console.log(this.c)
-   // e.cart = true;
-    console.log('cart' + this.cart);
+this.cartservice.add(e);
+this.cart=this.cartservice.get();
+   console.log(this.cart);
   }
   b: Book = {} as Book;
   c: Book = {} as Book;
